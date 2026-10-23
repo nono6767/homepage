@@ -4,7 +4,8 @@
 HTML / CSS / JavaScript のみで作成した1ページ構成のサイトです（GitHub Pages 対応）。
 
 ## ファイル構成
-- `index.html` … ページ本体
+- `index.html` … トップページ（1ページ構成）
+- `about.html` … 私たちについて（店名の由来）
 - `css/style.css` … デザイン（スマホファースト、768px以上でPCレイアウト）
 - `js/main.js` … スマホメニュー、固定予約ボタン、フェードイン
 

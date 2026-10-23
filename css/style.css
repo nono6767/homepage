@@ -66,6 +66,7 @@ strong { font-weight: 700; }
 .container--narrow { max-width: 760px; }
 
 .center { text-align: center; }
+.nowrap { white-space: nowrap; }
 
 .pc-only { display: none; }
 .sp-only { display: inline; }
@@ -1027,4 +1028,123 @@ strong { font-weight: 700; }
   50% { transform: scaleY(1); transform-origin: top; }
   51% { transform-origin: bottom; }
   100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ==========================================================
+   Enberの由来（トップの導線 / Aboutページ）
+   ========================================================== */
+.btn--outline {
+  color: var(--color-amber-dark);
+  background: transparent;
+  border: 1px solid var(--color-amber);
+}
+.btn--outline::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: rotate(45deg);
+}
+.btn--outline:hover { color: #fff; background: var(--color-amber); }
+
+.nav__list a[aria-current="page"] { color: var(--color-amber); }
+
+/* アン・バーの腕の円 × 琥珀のしずくをイメージした飾り */
+.intro__ring,
+.story__ring {
+  display: block;
+  width: 88px;
+  height: 72px;
+  margin: 0 auto 20px;
+  border: 1.5px solid var(--color-amber-light);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 60%, rgba(230, 192, 143, 0.55), rgba(243, 223, 193, 0.15) 55%, transparent 70%);
+}
+
+/* ---------- トップ：Enberの由来 ---------- */
+.intro {
+  background: linear-gradient(180deg, var(--color-cream), var(--color-ivory));
+}
+.intro__body { text-align: center; }
+.intro__copy {
+  margin-top: 14px;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.9;
+  letter-spacing: 0.1em;
+  color: var(--color-brown);
+  word-break: auto-phrase;
+  text-wrap: balance;
+}
+.intro__text {
+  max-width: 32em;
+  margin: 20px auto 32px;
+  font-size: 15px;
+  line-height: 2.1;
+  word-break: auto-phrase;
+  text-wrap: pretty;
+}
+
+/* ---------- About ページ ---------- */
+.page-head {
+  padding: calc(var(--header-h) + 56px) var(--gutter) 48px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--color-honey), var(--color-cream));
+}
+.page-head__title {
+  margin-top: 4px;
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--color-brown);
+}
+
+.story { padding-top: 64px; background: var(--color-cream); }
+.story__container { max-width: 720px; }
+.story__title {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: var(--color-brown);
+  word-break: auto-phrase;
+}
+.story__title::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 1px;
+  margin: 20px auto 0;
+  background: var(--color-amber);
+}
+.story__text {
+  margin-top: 40px;
+  font-size: 16px;
+  line-height: 2.25;
+  letter-spacing: 0.06em;
+  text-wrap: pretty;
+}
+.story__text p + p { margin-top: 2em; }
+
+.story-cta { padding-top: 0; background: var(--color-cream); }
+.story-cta .cta-box { margin-top: 0; }
+.story-cta__back { margin-top: 32px; font-size: 14px; }
+
+@media (min-width: 768px) {
+  .intro__copy { font-size: 30px; }
+  .intro__text { font-size: 16px; }
+  .intro__ring,
+  .story__ring { width: 112px; height: 92px; }
+
+  .page-head { padding: calc(var(--header-h) + 80px) var(--gutter) 64px; }
+  .page-head__title { font-size: 34px; }
+
+  .story { padding-top: 96px; }
+  .story__title { font-size: 28px; }
+  .story__text { margin-top: 56px; font-size: 17px; line-height: 2.4; }
 }

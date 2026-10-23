@@ -38,10 +38,11 @@
 
   if ('IntersectionObserver' in window) {
     // 予約セクション表示中は固定ボタンを隠す
-    new IntersectionObserver(function (entries) {
+    var contactObserver = new IntersectionObserver(function (entries) {
       contactVisible = entries[0].isIntersecting;
       onScroll();
-    }).observe(contact);
+    });
+    if (contact) contactObserver.observe(contact);
 
     /* ---------- フェードイン ---------- */
     var fadeObserver = new IntersectionObserver(function (entries) {
