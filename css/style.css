@@ -936,7 +936,7 @@ strong { font-weight: 700; }
   }
   .hero__body { order: 1; padding: 40px 40px 40px 8vw; }
   .hero__eyebrow { font-size: 14px; padding: 4px 16px; }
-  .hero__title { margin-top: 16px; }
+  .hero__title { margin-top: 16px; font-size: clamp(20px, 2.8vw, 44px); }
   .hero__lead { margin-top: 16px; font-size: 15px; }
   .hero__for { margin-top: 22px; }
   .hero__for-title { font-size: 13px; }
