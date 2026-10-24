@@ -468,20 +468,6 @@ strong { font-weight: 700; }
   line-height: 1.75;
 }
 .history__list dt { font-family: var(--font-en); font-size: 14px; color: var(--color-amber-dark); }
-.history__steps { margin-top: 12px; font-size: 13px; line-height: 1.8; }
-.history__steps li { position: relative; padding: 0 0 10px 18px; border-left: 1px solid var(--color-amber-light); margin-left: 4px; }
-.history__steps li::before {
-  content: "";
-  position: absolute;
-  left: -4px;
-  top: 0.55em;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--color-amber);
-}
-.history__steps li:last-child { padding-bottom: 0; }
-.history__steps + .history__list { margin-top: 22px; padding-top: 18px; border-top: 1px dashed var(--color-line); }
 
 /* ---------- Lesson ---------- */
 .lesson { background: var(--color-ivory); }
