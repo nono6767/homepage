@@ -381,6 +381,13 @@ strong { font-weight: 700; }
   letter-spacing: 0.08em;
   color: var(--color-brown);
 }
+.instructor-card__name span {
+  margin-left: 12px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--color-text-sub);
+}
 .instructor-card__label {
   margin: 22px 0 8px;
   font-size: 13px;
@@ -474,6 +481,7 @@ strong { font-weight: 700; }
   background: var(--color-amber);
 }
 .history__steps li:last-child { padding-bottom: 0; }
+.history__steps + .history__list { margin-top: 22px; padding-top: 18px; border-top: 1px dashed var(--color-line); }
 
 /* ---------- Lesson ---------- */
 .lesson { background: var(--color-ivory); }
