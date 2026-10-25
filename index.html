@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>大岡山駅 ピラティス｜マシンピラティススタジオ Enber Pilates（アンバーピラティス）</title>
   <meta name="description" content="大岡山駅（大田区）徒歩3分でピラティスなら、Enber Pilates（アンバーピラティス）。姿勢を整えたい方、産後の体づくりをしたい方、運動が苦手な方に。パーソナル・少人数グループのマシンピラティスで、妊娠・産後・怪我のときも続けられるCare Support制度あり。グループ体験2,000円。">
   <meta name="theme-color" content="#b9772f">
@@ -51,15 +51,24 @@
 
     <!-- ===== 1. Hero（最初の画面で「どんなスタジオか」「誰向けか」「体験予約」が分かる構成） ===== -->
     <section class="hero">
-      <div class="hero__image photo">
-        <img src="images/studio-main.jpg" alt="やわらかな光が差し込むスタジオ。アーチの壁にEnberのロゴとリフォーマーが並ぶ" width="1150" height="652">
+      <!-- 全画面の写真＋重ねる文字 -->
+      <div class="hero__visual">
+        <div class="hero__image photo">
+          <img src="images/studio-main.jpg" alt="やわらかな光が差し込むスタジオ。アーチの壁にEnberのロゴとリフォーマーが並ぶ" width="1150" height="652">
+        </div>
+        <div class="hero__overlay">
+          <p class="hero__eyebrow">大岡山駅 徒歩3分のマシンピラティススタジオ</p>
+          <h1 class="hero__title">
+            安心できる場所で、<br>
+            あなたの輝きを育てる。
+          </h1>
+          <a href="#contact" class="btn btn--primary btn--lg hero__cta" id="heroCta">体験レッスンを予約する</a>
+        </div>
+        <a href="#intro" class="hero__scroll" aria-label="下へスクロール">Scroll</a>
       </div>
+
+      <!-- 写真の下：説明文・おすすめ・体験リンク -->
       <div class="hero__body">
-        <p class="hero__eyebrow">大岡山駅 徒歩3分のマシンピラティススタジオ</p>
-        <h1 class="hero__title">
-          安心できる場所で、<br>
-          あなたの輝きを育てる。
-        </h1>
         <p class="hero__lead">パーソナル＆少人数グループで、<br class="sp-only">あなたのからだに合わせて丁寧に指導します。</p>
 
         <div class="hero__for">
@@ -71,12 +80,8 @@
           </ul>
         </div>
 
-        <div class="hero__actions">
-          <a href="#contact" class="btn btn--primary btn--lg">体験レッスンを予約する</a>
-          <a href="#trial" class="hero__note">グループ体験 <strong>2,000円</strong>〜　体験について見る &rarr;</a>
-        </div>
+        <a href="#trial" class="hero__note">グループ体験 <strong>2,000円</strong>〜　体験について見る &rarr;</a>
       </div>
-      <a href="#concept" class="hero__scroll" aria-label="下へスクロール">Scroll</a>
     </section>
 
     <!-- ===== Enberの由来（Aboutページへの導線） ===== -->

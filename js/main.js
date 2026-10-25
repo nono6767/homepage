@@ -6,6 +6,7 @@
   var nav = document.getElementById('globalNav');
   var fixedCta = document.getElementById('fixedCta');
   var contact = document.getElementById('contact');
+  var heroCta = document.getElementById('heroCta');
 
   /* ---------- スマホメニュー開閉 ---------- */
   function setMenu(open) {
@@ -29,11 +30,12 @@
 
   /* ---------- スクロール時のヘッダー影・固定予約ボタン ---------- */
   var contactVisible = false;
+  var heroCtaVisible = false;
 
   function onScroll() {
     var y = window.scrollY;
     header.classList.toggle('is-scrolled', y > 10);
-    fixedCta.classList.toggle('is-show', y > window.innerHeight * 0.6 && !contactVisible);
+    fixedCta.classList.toggle('is-show', y > window.innerHeight * 0.6 && !contactVisible && !heroCtaVisible);
   }
 
   if ('IntersectionObserver' in window) {
@@ -43,6 +45,14 @@
       onScroll();
     });
     if (contact) contactObserver.observe(contact);
+
+    // トップの予約ボタンが見えている間も固定ボタンを隠す（同じボタンが2つ並ばないように）
+    if (heroCta) {
+      new IntersectionObserver(function (entries) {
+        heroCtaVisible = entries[0].isIntersecting;
+        onScroll();
+      }).observe(heroCta);
+    }
 
     /* ---------- フェードイン ---------- */
     var fadeObserver = new IntersectionObserver(function (entries) {
