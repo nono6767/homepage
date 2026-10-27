@@ -753,6 +753,25 @@ strong { font-weight: 700; }
   color: var(--color-amber-dark);
 }
 .trial-card__price span { font-family: var(--font-sans); font-size: 15px; margin-left: 2px; }
+/* 通常料金との比較 */
+.trial-card__deal { margin-top: 10px; }
+.trial-card__deal .trial-card__price { margin-top: 0; }
+.trial-card__regular { font-size: 13px; color: var(--color-text-sub); }
+.trial-card__regular s { text-decoration-thickness: 1px; }
+.trial-card__save {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-amber), var(--color-amber-dark));
+  border-radius: 999px;
+}
+.trial__note { margin-top: 12px; font-size: 12px; color: var(--color-text-sub); }
+.choice__meta s { color: #b3a594; }
+.choice__meta strong { color: var(--color-amber-dark); }
 .trial-card__text { margin-top: 10px; font-size: 13px; text-align: left; }
 
 .flow {
