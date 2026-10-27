@@ -404,7 +404,34 @@ strong { font-weight: 700; }
 .values__item p { font-size: 14px; }
 
 /* ---------- Instructor ---------- */
-.instructor__list { display: grid; gap: 24px; }
+/* スマホ：横スワイプで1人ずつ（次の人を少し見せる） */
+.instructor__list {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 4px var(--gutter) 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 var(--gutter);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.instructor__list::-webkit-scrollbar { display: none; }
+.instructor-card { flex: 0 0 86%; scroll-snap-align: start; }
+.instructor__dots { display: flex; justify-content: center; gap: 10px; margin-top: 4px; }
+.instructor__dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-amber-light);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.instructor__dots button[aria-current="true"] { opacity: 1; background: var(--color-amber); transform: scale(1.25); }
 .instructor-card__photo { aspect-ratio: 4 / 3; }
 .instructor-card__body { padding: 24px; }
 .instructor-card__role {
@@ -1083,11 +1110,23 @@ strong { font-weight: 700; }
   .values { grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
   /* Instructor */
-  .instructor__list { gap: 32px; }
-  .instructor-card { display: grid; grid-template-columns: 300px 1fr; align-items: start; }
-  .instructor-card__photo { aspect-ratio: 3 / 4; }
-  .instructor-card__body { padding: 36px 44px; }
-  .instructor-card__name { font-size: 36px; }
+  /* PC：3人を横並び */
+  .instructor__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+  .instructor__dots { display: none; }
+  /* 高さをそろえ、「経歴を見る」を下端にそろえる */
+  .instructor-card { display: flex; flex-direction: column; }
+  .instructor-card__body { display: flex; flex-direction: column; flex: 1; padding: 28px 26px 32px; }
+  .instructor-card .history { margin-top: auto; padding-top: 0; }
+  .instructor-card .qual-list { margin-bottom: 22px; }
+  .instructor-card__name { font-size: 32px; }
 
   /* Lesson */
   .lesson__list { grid-template-columns: 1fr 1fr; gap: 40px; }

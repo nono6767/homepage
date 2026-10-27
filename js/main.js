@@ -73,6 +73,34 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  /* ---------- インストラクター紹介：横スワイプの位置表示 ---------- */
+  var instructorList = document.getElementById('instructorList');
+  var instructorDots = document.getElementById('instructorDots');
+
+  if (instructorList && instructorDots) {
+    var cards = instructorList.children;
+    var dots = [];
+
+    Array.prototype.forEach.call(cards, function (card, i) {
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', (i + 1) + '人目のインストラクターを表示');
+      dot.addEventListener('click', function () {
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      });
+      instructorDots.appendChild(dot);
+      dots.push(dot);
+    });
+
+    var updateDots = function () {
+      var max = instructorList.scrollWidth - instructorList.clientWidth;
+      var index = max > 0 ? Math.round(instructorList.scrollLeft / max * (cards.length - 1)) : 0;
+      dots.forEach(function (dot, i) { dot.setAttribute('aria-current', String(i === index)); });
+    };
+    instructorList.addEventListener('scroll', updateDots, { passive: true });
+    updateDots();
+  }
+
   /* ---------- コピーライト年 ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
