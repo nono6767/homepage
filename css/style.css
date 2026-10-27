@@ -535,6 +535,9 @@ h2.section__en { font-weight: 400; }
   transition: transform 0.3s;
 }
 .history[open] summary::after { transform: translateY(0) rotate(-135deg); }
+/* 開閉部分が続くときは区切り線1本でつなげる */
+.history + .history { margin-top: 0; }
+.history .check-list { margin: 12px 0 4px; }
 .history__intro { margin-top: 12px; font-size: 13px; line-height: 1.85; }
 .history__list {
   display: grid;
@@ -1275,6 +1278,7 @@ h2.section__en { font-weight: 400; }
   .instructor-card { display: flex; flex-direction: column; }
   .instructor-card__body { display: flex; flex-direction: column; flex: 1; padding: 28px 26px 32px; }
   .instructor-card .history { margin-top: auto; padding-top: 0; }
+  .instructor-card .history + .history { margin-top: 0; }
   .instructor-card .qual-list { margin-bottom: 22px; }
   .instructor-card__name { font-size: 32px; }
 
