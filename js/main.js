@@ -35,7 +35,7 @@
   function onScroll() {
     var y = window.scrollY;
     header.classList.toggle('is-scrolled', y > 10);
-    fixedCta.classList.toggle('is-show', y > window.innerHeight * 0.6 && !contactVisible && !heroCtaVisible);
+    if (fixedCta) fixedCta.classList.toggle('is-show', y > window.innerHeight * 0.6 && !contactVisible && !heroCtaVisible);
   }
 
   if ('IntersectionObserver' in window) {

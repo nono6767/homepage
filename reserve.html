@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>体験レッスンのご予約｜大岡山駅 ピラティス Enber Pilates（アンバーピラティス）</title>
+  <meta name="description" content="Enber Pilates（アンバーピラティス）の体験レッスン予約ページです。グループ体験・パーソナル体験のご希望日をカレンダーからお選びください。">
+  <meta name="theme-color" content="#b9772f">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo" aria-label="Enber Pilates トップへ">
+        <span class="logo__en">Enber Pilates</span>
+        <span class="logo__ja">アンバーピラティス</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="globalNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav" id="globalNav" aria-label="グローバルナビゲーション">
+      <ul class="nav__list">
+        <li><a href="about.html">About<small>私たちについて</small></a></li>
+        <li><a href="index.html#concept">Concept<small>想い</small></a></li>
+        <li><a href="index.html#instructor">Instructor<small>インストラクター</small></a></li>
+        <li><a href="index.html#lesson">Lesson<small>レッスン</small></a></li>
+        <li><a href="index.html#price">Price<small>料金プラン</small></a></li>
+        <li><a href="index.html#trial">Trial<small>体験レッスン</small></a></li>
+        <li><a href="index.html#care">Care Support<small>ケアサポート制度</small></a></li>
+        <li><a href="index.html#faq">FAQ<small>よくある質問</small></a></li>
+        <li><a href="index.html#access">Access<small>アクセス</small></a></li>
+      </ul>
+      <a href="reserve.html" class="btn btn--primary nav__cta" aria-current="page">体験レッスンを予約する</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <section class="page-head">
+      <p class="section__en">Reservation</p>
+      <h1 class="page-head__title">体験レッスンのご予約</h1>
+    </section>
+
+    <section class="section reserve">
+      <div class="container container--narrow">
+
+        <!-- ※送信先（Formspreeなど）が決まったら、form の action を設定して送信できるようにします -->
+        <form class="reserve__form" id="reserveForm" novalidate>
+          <p class="reserve__lead">以下の内容をご入力のうえ、「入力内容を確認する」を押してください。</p>
+
+          <!-- 体験の種類 -->
+          <fieldset class="field">
+            <legend class="field__label">体験の種類<span class="field__req">必須</span></legend>
+            <div class="choice-list">
+              <label class="choice">
+                <input type="radio" name="lesson" value="グループ体験（50分）2,000円" required>
+                <span class="choice__body">
+                  <span class="choice__title">グループ体験</span>
+                  <span class="choice__meta">50分／2,000円</span>
+                </span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="lesson" value="パーソナル体験（実技30分＋カウンセリング10分）7,000円">
+                <span class="choice__body">
+                  <span class="choice__title">パーソナル体験</span>
+                  <span class="choice__meta">実技30分＋カウンセリング10分／7,000円</span>
+                </span>
+              </label>
+            </div>
+            <p class="field__error" data-error-for="lesson">体験の種類をお選びください。</p>
+          </fieldset>
+
+          <!-- 希望日 -->
+          <div class="field">
+            <p class="field__label" id="dateLabel">ご希望日<span class="field__req">必須</span></p>
+            <div class="calendar" id="calendar" aria-labelledby="dateLabel">
+              <div class="calendar__head">
+                <button type="button" class="calendar__nav" id="calPrev" aria-label="前の月">&lsaquo;</button>
+                <p class="calendar__month" id="calMonth" aria-live="polite"></p>
+                <button type="button" class="calendar__nav" id="calNext" aria-label="次の月">&rsaquo;</button>
+              </div>
+              <div class="calendar__week" aria-hidden="true">
+                <span class="is-sun">日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span class="is-sat">土</span>
+              </div>
+              <div class="calendar__grid" id="calGrid"></div>
+            </div>
+            <p class="calendar__selected" id="calSelected">カレンダーから日付をお選びください</p>
+            <input type="hidden" name="date" id="dateInput">
+            <p class="field__error" data-error-for="date">ご希望日をお選びください。</p>
+          </div>
+
+          <!-- お名前 -->
+          <div class="field">
+            <label class="field__label" for="name">お名前<span class="field__req">必須</span></label>
+            <input class="input" type="text" id="name" name="name" autocomplete="name" placeholder="例）山田 花子" required>
+            <p class="field__error" data-error-for="name">お名前をご入力ください。</p>
+          </div>
+
+          <!-- 電話番号 -->
+          <div class="field">
+            <label class="field__label" for="tel">電話番号<span class="field__req">必須</span></label>
+            <input class="input" type="tel" id="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="例）090-1234-5678" pattern="[0-9０-９\-－ ]{10,14}" required>
+            <p class="field__error" data-error-for="tel">電話番号を正しくご入力ください。</p>
+          </div>
+
+          <!-- メールアドレス -->
+          <div class="field">
+            <label class="field__label" for="email">メールアドレス<span class="field__req">必須</span></label>
+            <input class="input" type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="例）hanako@example.com" required>
+            <p class="field__error" data-error-for="email">メールアドレスを正しくご入力ください。</p>
+          </div>
+
+          <div class="reserve__submit">
+            <button type="submit" class="btn btn--primary btn--lg">入力内容を確認する</button>
+          </div>
+        </form>
+
+        <!-- 確認画面 -->
+        <div class="reserve__confirm" id="reserveConfirm" hidden>
+          <h2 class="reserve__confirm-title">ご入力内容の確認</h2>
+          <dl class="reserve__summary" id="reserveSummary"></dl>
+          <p class="reserve__notice">※ 現在このページは準備中のため、ご予約はまだ送信されません。<br>
+            お手数ですが、体験のご予約は<a href="index.html#contact" class="text-link">LINE・お問い合わせ</a>からお願いいたします。</p>
+          <div class="reserve__actions">
+            <button type="button" class="btn btn--outline" id="reserveBack">入力内容を修正する</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p class="footer__logo">Enber Pilates</p>
+    <p class="footer__ja">アンバーピラティス</p>
+    <p class="footer__desc">大岡山駅のピラティススタジオ</p>
+    <p class="footer__copy">&copy; <span id="year">2026</span> Enber Pilates</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/reserve.js"></script>
+</body>
+</html>
