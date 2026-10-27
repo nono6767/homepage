@@ -350,6 +350,8 @@ strong { font-weight: 700; }
   background: var(--color-amber);
 }
 .section__lead { margin-top: 18px; font-size: 14px; color: var(--color-text-sub); }
+h2.section__en { font-weight: 400; }
+.concept .section__head { margin-bottom: 16px; }
 /* セクションのキャッチコピー（Conceptの見出しコピーとトーンをそろえる） */
 .section__catch {
   margin-bottom: 28px;
