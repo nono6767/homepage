@@ -54,8 +54,11 @@
     <section class="hero">
       <!-- 全画面の写真＋重ねる文字 -->
       <div class="hero__visual">
-        <div class="hero__image photo">
-          <img src="images/studio-main.jpg" alt="やわらかな光が差し込むスタジオ。アーチの壁にEnberのロゴとリフォーマーが並ぶ" width="1150" height="652">
+        <!-- スライドショー：5秒ごとに切り替え。写真を増やすときは img を1行追加 -->
+        <div class="hero__image photo" id="heroSlides">
+          <img class="is-active" src="images/studio-main.jpg" alt="やわらかな光が差し込むスタジオ。アーチの壁にEnberのロゴとリフォーマーが並ぶ" width="1150" height="652">
+          <img src="images/hero-personal.jpg" alt="インストラクターがそばでサポートする、リフォーマーでのパーソナルレッスン" width="1536" height="1024" style="object-position: 52% 50%;">
+          <img src="images/hero-group.jpg" alt="窓辺で並んで腕を伸ばす、グループレッスンの様子" width="1536" height="1024" style="object-position: 48% 50%;">
         </div>
         <div class="hero__overlay">
           <p class="hero__eyebrow">大岡山駅 徒歩3分のマシンピラティススタジオ</p>

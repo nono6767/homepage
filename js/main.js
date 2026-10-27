@@ -107,6 +107,19 @@
     return n + '件目の口コミを表示';
   });
 
+  /* ---------- トップ写真のスライドショー（5秒ごと） ---------- */
+  var heroSlides = document.getElementById('heroSlides');
+  if (heroSlides && heroSlides.children.length > 1 &&
+      !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    var slides = heroSlides.children;
+    var current = 0;
+    setInterval(function () {
+      slides[current].classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-active');
+    }, 5000);
+  }
+
   /* ---------- コピーライト年 ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
 })();

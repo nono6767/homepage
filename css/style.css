@@ -244,7 +244,14 @@ strong { font-weight: 700; }
   color: #fff;
 }
 .hero__image { position: absolute; inset: 0; }
-.hero__image img { object-position: 45% 50%; }
+.hero__image img {
+  position: absolute;
+  inset: 0;
+  object-position: 45% 50%;
+  opacity: 0;
+  transition: opacity 1.6s ease;
+}
+.hero__image img.is-active { opacity: 1; }
 /* 文字が埋もれないよう、写真の下側に暗めのグラデーション */
 .hero__visual::after {
   content: "";
@@ -1194,7 +1201,7 @@ h2.section__en { font-weight: 400; }
 
   /* Hero */
   .hero__visual { min-height: 600px; }
-  .hero__image img { object-position: 50% 50%; }
+  .hero__image img { object-position: 50% 50% !important; }
   .hero__visual::after {
     background: linear-gradient(180deg, rgba(43, 30, 20, 0) 35%, rgba(43, 30, 20, 0.3) 58%, rgba(43, 30, 20, 0.68) 100%);
   }
