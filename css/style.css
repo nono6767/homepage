@@ -697,6 +697,29 @@ h2.section__en { font-weight: 400; }
 }
 .price__subtitle small { display: block; font-family: var(--font-sans); font-size: 12px; color: var(--color-text-sub); }
 
+/* 入会金・事務手数料 */
+.fees {
+  margin-top: 20px;
+  padding: 4px 18px;
+  background: var(--color-ivory);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+}
+.fees__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 4px 12px;
+  padding: 14px 0;
+  font-size: 14px;
+}
+.fees__row + .fees__row { border-top: 1px dashed var(--color-line); }
+.fees dt { font-weight: 700; color: var(--color-brown); }
+.fees dd { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+.fees__regular { color: var(--color-text-sub); }
+.fees__deal { color: var(--color-amber-dark); }
+.fees__deal strong { margin-left: 4px; font-family: var(--font-en); font-size: 22px; font-weight: 500; }
+
 .price__care {
   display: flex;
   align-items: center;
@@ -771,6 +794,35 @@ h2.section__en { font-weight: 400; }
   background: linear-gradient(135deg, var(--color-amber), var(--color-amber-dark));
   border-radius: 999px;
 }
+/* 当日入会特典 */
+.trial__perk {
+  margin-top: 20px;
+  padding: 18px 20px;
+  text-align: center;
+  background: linear-gradient(150deg, #fff7ec, var(--color-honey));
+  border: 2px solid var(--color-amber);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.trial__perk-label {
+  display: inline-block;
+  padding: 2px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-amber), var(--color-amber-dark));
+  border-radius: 999px;
+}
+.trial__perk-text {
+  margin-top: 8px;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-brown);
+}
+.trial__perk-text s { font-family: var(--font-sans); font-size: 14px; color: var(--color-text-sub); }
+.trial__perk-text strong { font-family: var(--font-en); font-size: 30px; font-weight: 500; line-height: 1; color: var(--color-amber-dark); }
 .trial__note { margin-top: 12px; font-size: 12px; color: var(--color-text-sub); }
 .choice__meta s { color: #b3a594; }
 .choice__meta strong { color: var(--color-amber-dark); }
@@ -1179,6 +1231,9 @@ h2.section__en { font-weight: 400; }
   .plan-trial__points { max-width: 520px; margin-left: auto; margin-right: auto; }
   .price__subtitle { margin-top: 80px; }
   .price__care { justify-content: center; }
+  .fees { max-width: 760px; margin: 24px auto 0; padding: 4px 32px; }
+  .fees__row { grid-template-columns: 6.5em 1fr; }
+  .trial__perk-text { font-size: 20px; }
 
   /* Trial */
   .trial__list { grid-template-columns: 1fr 1fr; gap: 24px; }
