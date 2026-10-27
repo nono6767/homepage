@@ -1363,36 +1363,35 @@ h2.section__en { font-weight: 400; }
 .nav__list a[aria-current="page"] { color: var(--color-amber); }
 
 /* ロゴマーク（アン・バーの腕の円 × 琥珀の光） */
-.intro__mark,
 .story__mark {
   display: block;
-  width: 120px;
+  width: 140px;
   height: auto;
-  margin: 0 auto 20px;
+  margin: 0 auto 28px;
 }
-.story__mark { width: 140px; margin-bottom: 28px; }
 
-/* ---------- トップ：Enberの由来 ---------- */
-.intro {
-  background: linear-gradient(180deg, var(--color-cream), var(--color-ivory));
+/* ---------- トップ：Concept末尾のEnberの由来（Aboutへの導線） ---------- */
+.concept__about {
+  margin-top: 48px;
+  padding-top: 40px;
+  text-align: center;
+  border-top: 1px solid var(--color-line);
 }
-.intro__body { text-align: center; }
-.intro__copy {
-  margin-top: 14px;
+.concept__about-mark { display: block; width: 72px; height: auto; margin: 0 auto 16px; }
+.concept__about-copy {
   font-family: var(--font-serif);
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 17px;
   line-height: 1.9;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--color-brown);
   word-break: auto-phrase;
-  text-wrap: balance;
 }
-.intro__text {
+.concept__about-text {
   max-width: 32em;
-  margin: 20px auto 32px;
-  font-size: 15px;
-  line-height: 2.1;
+  margin: 10px auto 24px;
+  font-size: 13px;
+  line-height: 2;
+  color: var(--color-text-sub);
   word-break: auto-phrase;
   text-wrap: pretty;
 }
@@ -1612,9 +1611,10 @@ h2.section__en { font-weight: 400; }
 }
 
 @media (min-width: 768px) {
-  .intro__copy { font-size: 30px; }
-  .intro__text { font-size: 16px; }
-  .intro__mark { width: 140px; }
+  .concept__about { margin-top: 64px; padding-top: 56px; }
+  .concept__about-mark { width: 84px; }
+  .concept__about-copy { font-size: 20px; }
+  .concept__about-text { max-width: none; font-size: 14px; }
   .story__mark { width: 170px; }
 
   .page-head { padding: calc(var(--header-h) + 80px) var(--gutter) 64px; }
