@@ -409,8 +409,9 @@ h2.section__en { font-weight: 400; }
 .values__item p { font-size: 14px; }
 
 /* ---------- Instructor ---------- */
-/* スマホ：横スワイプで1人ずつ（次の人を少し見せる） */
-.instructor__list {
+/* スマホ：横スワイプで1枚ずつ（次のカードを少し見せる）※インストラクター紹介・お客様の声で共通 */
+.instructor__list,
+.voice__list {
   display: flex;
   align-items: flex-start;
   gap: 14px;
@@ -422,10 +423,13 @@ h2.section__en { font-weight: 400; }
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
-.instructor__list::-webkit-scrollbar { display: none; }
+.instructor__list::-webkit-scrollbar,
+.voice__list::-webkit-scrollbar { display: none; }
 .instructor-card { flex: 0 0 86%; scroll-snap-align: start; }
-.instructor__dots { display: flex; justify-content: center; gap: 10px; margin-top: 4px; }
-.instructor__dots button {
+.instructor__dots,
+.carousel-dots { display: flex; justify-content: center; gap: 10px; margin-top: 4px; }
+.instructor__dots button,
+.carousel-dots button {
   width: 8px;
   height: 8px;
   padding: 0;
@@ -436,7 +440,8 @@ h2.section__en { font-weight: 400; }
   cursor: pointer;
   transition: opacity 0.3s, transform 0.3s;
 }
-.instructor__dots button[aria-current="true"] { opacity: 1; background: var(--color-amber); transform: scale(1.25); }
+.instructor__dots button[aria-current="true"],
+.carousel-dots button[aria-current="true"] { opacity: 1; background: var(--color-amber); transform: scale(1.25); }
 .instructor-card__photo { aspect-ratio: 4 / 3; }
 .instructor-card__body { padding: 24px; }
 .instructor-card__role {
@@ -686,6 +691,49 @@ h2.section__en { font-weight: 400; }
   transform: rotate(-45deg);
 }
 .plan-trial__points strong { color: var(--color-amber-dark); }
+
+/* ---------- Voice（お客様の声） ---------- */
+.voice { background: linear-gradient(180deg, var(--color-ivory), var(--color-cream)); }
+.voice-card {
+  flex: 0 0 86%;
+  scroll-snap-align: start;
+  position: relative;
+  padding: 36px 24px 26px;
+}
+.voice-card:only-child { flex-basis: 100%; }
+/* 引用符の飾り */
+.voice-card::before {
+  content: "\201C";
+  position: absolute;
+  top: 6px;
+  left: 18px;
+  font-family: var(--font-en);
+  font-size: 64px;
+  line-height: 1;
+  color: var(--color-amber-light);
+}
+.voice-card__title {
+  position: relative;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.04em;
+  color: var(--color-brown);
+}
+.voice-card__text {
+  margin-top: 16px;
+  padding-top: 16px;
+  font-size: 14px;
+  line-height: 2;
+  border-top: 1px solid var(--color-line);
+}
+.voice-card__source {
+  margin-top: 16px;
+  font-size: 12px;
+  text-align: right;
+  color: var(--color-text-sub);
+}
 
 .price__subtitle {
   margin: 56px 0 18px;
@@ -1207,7 +1255,21 @@ h2.section__en { font-weight: 400; }
     padding: 0;
     overflow: visible;
   }
-  .instructor__dots { display: none; }
+  .instructor__dots,
+  .carousel-dots { display: none; }
+  /* お客様の声：PCは横並び（1枚のときは中央に1枚） */
+  .voice__list {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+  .voice-card { flex: 0 1 calc((100% - 48px) / 3); padding: 44px 32px 30px; }
+  .voice-card:only-child { flex-basis: 100%; max-width: 680px; }
+  .voice-card__title { font-size: 21px; }
   /* 高さをそろえ、「経歴を見る」を下端にそろえる */
   .instructor-card { display: flex; flex-direction: column; }
   .instructor-card__body { display: flex; flex-direction: column; flex: 1; padding: 28px 26px 32px; }
