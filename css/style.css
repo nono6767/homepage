@@ -1267,7 +1267,8 @@ h2.section__en { font-weight: 400; }
     padding: 0;
     overflow: visible;
   }
-  .voice-card { flex: 0 1 calc((100% - 48px) / 3); padding: 44px 32px 30px; }
+  .voice-card { display: flex; flex-direction: column; flex: 0 1 calc((100% - 48px) / 3); padding: 44px 32px 30px; }
+  .voice-card__source { margin-top: auto; padding-top: 16px; }
   .voice-card:only-child { flex-basis: 100%; max-width: 680px; }
   .voice-card__title { font-size: 21px; }
   /* 高さをそろえ、「経歴を見る」を下端にそろえる */
