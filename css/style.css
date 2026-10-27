@@ -1441,6 +1441,39 @@ h2.section__en { font-weight: 400; }
 .story__text p + p { margin-top: 2em; }
 .story__photo { aspect-ratio: 3 / 2; margin-top: 48px; border-radius: var(--radius); }
 
+/* パーソナルとグループ、どちらも大切にしている理由 */
+.approach { background: var(--color-ivory); }
+.approach__en { text-align: center; margin-bottom: 4px; }
+.approach .story__text { margin-top: 32px; }
+.approach__key { display: inline-block; margin-top: 0.4em; font-family: var(--font-serif); font-size: 1.08em; color: var(--color-brown); }
+.approach__pair { display: grid; gap: 14px; margin-top: 36px; }
+.approach__item {
+  padding: 22px 22px 24px;
+  font-size: 15px;
+  line-height: 2.1;
+  background: var(--color-cream);
+  border-radius: var(--radius);
+}
+.approach__label {
+  margin-bottom: 6px;
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  color: var(--color-amber);
+}
+.approach__closing {
+  margin-top: 40px;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 2.2;
+  text-align: center;
+  color: var(--color-brown);
+  word-break: auto-phrase;
+  text-wrap: pretty;
+}
+.approach + .story-cta { padding-top: 80px; }
+
 .story-cta { padding-top: 0; background: var(--color-cream); }
 .story-cta .cta-box { margin-top: 0; }
 .story-cta__back { margin-top: 32px; font-size: 14px; }
@@ -1624,4 +1657,9 @@ h2.section__en { font-weight: 400; }
   .story__title { font-size: 28px; }
   .story__text { margin-top: 56px; font-size: 17px; line-height: 2.4; }
   .story__photo { max-width: 480px; margin: 64px auto 0; }
+  .approach .story__text { margin-top: 48px; }
+  .approach__pair { grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+  .approach__item { padding: 28px 30px 30px; font-size: 16px; }
+  .approach__closing { margin-top: 56px; font-size: 20px; }
+  .approach + .story-cta { padding-top: 120px; }
 }
