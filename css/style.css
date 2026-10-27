@@ -758,9 +758,9 @@ strong { font-weight: 700; }
 .trial-card__deal .trial-card__price { margin-top: 0; }
 .trial-card__regular { font-size: 13px; color: var(--color-text-sub); }
 .trial-card__regular s { text-decoration-thickness: 1px; }
-.trial-card__save {
+.trial-card__open {
   display: inline-block;
-  margin-top: 6px;
+  margin-top: 8px;
   padding: 2px 14px;
   font-size: 13px;
   font-weight: 700;
@@ -772,6 +772,17 @@ strong { font-weight: 700; }
 .trial__note { margin-top: 12px; font-size: 12px; color: var(--color-text-sub); }
 .choice__meta s { color: #b3a594; }
 .choice__meta strong { color: var(--color-amber-dark); }
+.choice__open {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 0 8px;
+  font-size: 11px;
+  line-height: 1.8;
+  vertical-align: 2px;
+  color: #fff;
+  background: var(--color-amber);
+  border-radius: 999px;
+}
 .trial-card__text { margin-top: 10px; font-size: 13px; text-align: left; }
 
 .flow {
